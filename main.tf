@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_certificates, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_connections, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_connection_classic_certificates, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_connection_service_principals, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_connection_types, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_credentials, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -59,7 +59,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_dsc_configurations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -68,7 +68,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_dsc_nodeconfigurations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -77,7 +77,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_hybrid_runbook_workers, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -86,7 +86,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_hybrid_runbook_worker_groups, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -95,7 +95,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_modules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -104,7 +104,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_powershell72_modules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_id = module.automation_accounts.automation_accounts["${k1}"].id
+        automation_account_id = module.automation_accounts.automation_accounts_id["${k1}"]
       })
     }
   ]...)
@@ -113,7 +113,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_python3_packages, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -122,7 +122,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_runbooks, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -131,7 +131,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_runtime_environments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_id = module.automation_accounts.automation_accounts["${k1}"].id
+        automation_account_id = module.automation_accounts.automation_accounts_id["${k1}"]
       })
     }
   ]...)
@@ -140,7 +140,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_schedules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -149,7 +149,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_software_update_configurations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_id = module.automation_accounts.automation_accounts["${k1}"].id
+        automation_account_id = module.automation_accounts.automation_accounts_id["${k1}"]
       })
     }
   ]...)
@@ -158,7 +158,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_source_controls, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_id = module.automation_accounts.automation_accounts["${k1}"].id
+        automation_account_id = module.automation_accounts.automation_accounts_id["${k1}"]
       })
     }
   ]...)
@@ -167,7 +167,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_variable_bools, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -176,7 +176,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_variable_datetimes, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -185,7 +185,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_variable_ints, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -194,7 +194,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_variable_objects, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -203,7 +203,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_variable_strings, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -212,7 +212,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_watchers, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_id = module.automation_accounts.automation_accounts["${k1}"].id
+        automation_account_id = module.automation_accounts.automation_accounts_id["${k1}"]
       })
     }
   ]...)
@@ -221,7 +221,7 @@ locals {
     for k1, v1 in var.automation_accounts : {
       for k2, v2 in coalesce(v1.automation_webhooks, {}) :
       "${k1}/${k2}" => merge(v2, {
-        automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
+        automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
       })
     }
   ]...)
@@ -231,8 +231,8 @@ locals {
       for k2, v2 in coalesce(v1.automation_certificates, {}) : {
         for k3, v3 in coalesce(v2.automation_connection_certificates, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          automation_account_name     = module.automation_accounts.automation_accounts["${k1}"].name
-          automation_certificate_name = module.automation_certificates.automation_certificates["${k1}/${k2}"].name
+          automation_account_name     = module.automation_accounts.automation_accounts_name["${k1}"]
+          automation_certificate_name = module.automation_certificates.automation_certificates_name["${k1}/${k2}"]
         })
       }
     ]...)
@@ -243,9 +243,9 @@ locals {
       for k2, v2 in coalesce(v1.automation_schedules, {}) : {
         for k3, v3 in coalesce(v2.automation_job_schedules, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          automation_account_name = module.automation_accounts.automation_accounts["${k1}"].name
-          schedule_name           = module.automation_schedules.automation_schedules["${k1}/${k2}"].name
-          runbook_name            = try(module.automation_runbooks.automation_runbooks["${k1}/${v3.runbook_name}"].name, v3.runbook_name)
+          automation_account_name = module.automation_accounts.automation_accounts_name["${k1}"]
+          schedule_name           = module.automation_schedules.automation_schedules_name["${k1}/${k2}"]
+          runbook_name            = try(module.automation_runbooks.automation_runbooks_name["${k1}/${v3.runbook_name}"], v3.runbook_name)
         })
       }
     ]...)
@@ -256,7 +256,7 @@ locals {
       for k2, v2 in coalesce(v1.automation_runtime_environments, {}) : {
         for k3, v3 in coalesce(v2.automation_runtime_environment_packages, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          automation_runtime_environment_id = module.automation_runtime_environments.automation_runtime_environments["${k1}/${k2}"].id
+          automation_runtime_environment_id = module.automation_runtime_environments.automation_runtime_environments_id["${k1}/${k2}"]
         })
       }
     ]...)
