@@ -15,6 +15,8 @@ Optional:
 Nested automation_certificates (azurerm_automation_certificate):
     Required:
         - base64
+        - base64_key_vault_id (alternative to base64 - read from Key Vault instead)
+        - base64_key_vault_secret_name (alternative to base64 - read from Key Vault instead)
         - name
         - resource_group_name
     Optional:
@@ -65,6 +67,8 @@ Nested automation_credentials (azurerm_automation_credential):
     Required:
         - name
         - password
+        - password_key_vault_id (alternative to password - read from Key Vault instead)
+        - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
         - resource_group_name
         - username
     Optional:
@@ -262,6 +266,8 @@ Nested automation_webhooks (azurerm_automation_webhook):
         - parameters
         - run_on_worker_group
         - uri
+        - uri_key_vault_id (alternative to uri - read from Key Vault instead)
+        - uri_key_vault_secret_name (alternative to uri - read from Key Vault instead)
 EOT
 
   type = map(object({
@@ -282,11 +288,13 @@ EOT
       type         = string
     }))
     automation_certificates = optional(map(object({
-      base64              = string
-      name                = string
-      resource_group_name = string
-      description         = optional(string)
-      exportable          = optional(bool) # Default: false
+      base64                       = string
+      base64_key_vault_id          = optional(string)
+      base64_key_vault_secret_name = optional(string)
+      name                         = string
+      resource_group_name          = string
+      description                  = optional(string)
+      exportable                   = optional(bool) # Default: false
       automation_connection_certificates = optional(map(object({
         name                = string
         resource_group_name = string
@@ -330,11 +338,13 @@ EOT
       }))
     })))
     automation_credentials = optional(map(object({
-      name                = string
-      password            = string
-      resource_group_name = string
-      username            = string
-      description         = optional(string)
+      name                           = string
+      password                       = string
+      password_key_vault_id          = optional(string)
+      password_key_vault_secret_name = optional(string)
+      resource_group_name            = string
+      username                       = string
+      description                    = optional(string)
     })))
     automation_dsc_configurations = optional(map(object({
       content_embedded    = string
@@ -598,14 +608,16 @@ EOT
       tags                           = optional(map(string))
     })))
     automation_webhooks = optional(map(object({
-      expiry_time         = string
-      name                = string
-      resource_group_name = string
-      runbook_name        = string
-      enabled             = optional(bool) # Default: true
-      parameters          = optional(map(string))
-      run_on_worker_group = optional(string)
-      uri                 = optional(string)
+      expiry_time               = string
+      name                      = string
+      resource_group_name       = string
+      runbook_name              = string
+      enabled                   = optional(bool) # Default: true
+      parameters                = optional(map(string))
+      run_on_worker_group       = optional(string)
+      uri                       = optional(string)
+      uri_key_vault_id          = optional(string)
+      uri_key_vault_secret_name = optional(string)
     })))
   }))
 
