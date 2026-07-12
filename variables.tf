@@ -272,11 +272,11 @@ EOT
     local_authentication_enabled  = optional(bool) # Default: true
     public_network_access_enabled = optional(bool) # Default: true
     tags                          = optional(map(string))
-    encryption = optional(object({
+    encryption = optional(list(object({
       key_source                = optional(string)
       key_vault_key_id          = string
       user_assigned_identity_id = optional(string)
-    }))
+    })))
     identity = optional(object({
       identity_ids = optional(set(string))
       type         = string
@@ -322,12 +322,12 @@ EOT
       name                = string
       resource_group_name = string
       is_global           = optional(bool)
-      field = object({
+      field = list(object({
         is_encrypted = optional(bool)
         is_optional  = optional(bool)
         name         = string
         type         = string
-      })
+      }))
     })))
     automation_credentials = optional(map(object({
       name                = string
@@ -415,19 +415,19 @@ EOT
         }))
         edit_mode_enabled = optional(bool)
         output_types      = optional(list(string))
-        parameters = optional(object({
+        parameters = optional(list(object({
           default_value = optional(string)
           key           = string
           mandatory     = optional(bool) # Default: false
           position      = optional(number)
           type          = string
-        }))
+        })))
       }))
-      job_schedule = optional(object({
+      job_schedule = optional(list(object({
         parameters    = optional(map(string))
         run_on        = optional(string)
         schedule_name = string
-      }))
+      })))
       publish_content_link = optional(object({
         hash = optional(object({
           algorithm = string
@@ -515,19 +515,19 @@ EOT
         source     = optional(string)
       }))
       target = optional(object({
-        azure_query = optional(object({
+        azure_query = optional(list(object({
           locations  = optional(list(string))
           scope      = optional(list(string))
           tag_filter = optional(string)
-          tags = optional(object({
+          tags = optional(list(object({
             tag    = string
             values = list(string)
-          }))
-        }))
-        non_azure_query = optional(object({
+          })))
+        })))
+        non_azure_query = optional(list(object({
           function_alias = optional(string)
           workspace_id   = optional(string)
-        }))
+        })))
       }))
       windows = optional(object({
         classifications_included        = list(string)
