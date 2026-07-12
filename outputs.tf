@@ -1,4 +1,9 @@
 # --- azurerm_automation_account ---
+output "automation_accounts_id" {
+  description = "Map of id values across all automation_accounts, keyed the same as var.automation_accounts"
+  value       = module.automation_accounts.automation_accounts_id
+}
+
 output "automation_accounts_dsc_primary_access_key" {
   description = "Map of dsc_primary_access_key values across all automation_accounts, keyed the same as var.automation_accounts"
   value       = module.automation_accounts.automation_accounts_dsc_primary_access_key
@@ -72,6 +77,11 @@ output "automation_accounts_tags" {
 }
 
 # --- azurerm_automation_certificate ---
+output "automation_certificates_id" {
+  description = "Map of id values across all automation_certificates, keyed the same as var.automation_certificates"
+  value       = module.automation_certificates.automation_certificates_id
+}
+
 output "automation_certificates_automation_account_name" {
   description = "Map of automation_account_name values across all automation_certificates, keyed the same as var.automation_certificates"
   value       = module.automation_certificates.automation_certificates_automation_account_name
@@ -109,6 +119,11 @@ output "automation_certificates_thumbprint" {
 }
 
 # --- azurerm_automation_connection ---
+output "automation_connections_id" {
+  description = "Map of id values across all automation_connections, keyed the same as var.automation_connections"
+  value       = module.automation_connections.automation_connections_id
+}
+
 output "automation_connections_automation_account_name" {
   description = "Map of automation_account_name values across all automation_connections, keyed the same as var.automation_connections"
   value       = module.automation_connections.automation_connections_automation_account_name
@@ -140,6 +155,11 @@ output "automation_connections_values" {
 }
 
 # --- azurerm_automation_connection_classic_certificate ---
+output "automation_connection_classic_certificates_id" {
+  description = "Map of id values across all automation_connection_classic_certificates, keyed the same as var.automation_connection_classic_certificates"
+  value       = module.automation_connection_classic_certificates.automation_connection_classic_certificates_id
+}
+
 output "automation_connection_classic_certificates_automation_account_name" {
   description = "Map of automation_account_name values across all automation_connection_classic_certificates, keyed the same as var.automation_connection_classic_certificates"
   value       = module.automation_connection_classic_certificates.automation_connection_classic_certificates_automation_account_name
@@ -176,6 +196,11 @@ output "automation_connection_classic_certificates_subscription_name" {
 }
 
 # --- azurerm_automation_connection_service_principal ---
+output "automation_connection_service_principals_id" {
+  description = "Map of id values across all automation_connection_service_principals, keyed the same as var.automation_connection_service_principals"
+  value       = module.automation_connection_service_principals.automation_connection_service_principals_id
+}
+
 output "automation_connection_service_principals_application_id" {
   description = "Map of application_id values across all automation_connection_service_principals, keyed the same as var.automation_connection_service_principals"
   value       = module.automation_connection_service_principals.automation_connection_service_principals_application_id
@@ -217,6 +242,11 @@ output "automation_connection_service_principals_tenant_id" {
 }
 
 # --- azurerm_automation_connection_type ---
+output "automation_connection_types_id" {
+  description = "Map of id values across all automation_connection_types, keyed the same as var.automation_connection_types"
+  value       = module.automation_connection_types.automation_connection_types_id
+}
+
 output "automation_connection_types_automation_account_name" {
   description = "Map of automation_account_name values across all automation_connection_types, keyed the same as var.automation_connection_types"
   value       = module.automation_connection_types.automation_connection_types_automation_account_name
@@ -243,6 +273,11 @@ output "automation_connection_types_resource_group_name" {
 }
 
 # --- azurerm_automation_credential ---
+output "automation_credentials_id" {
+  description = "Map of id values across all automation_credentials, keyed the same as var.automation_credentials"
+  value       = module.automation_credentials.automation_credentials_id
+}
+
 output "automation_credentials_automation_account_name" {
   description = "Map of automation_account_name values across all automation_credentials, keyed the same as var.automation_credentials"
   value       = module.automation_credentials.automation_credentials_automation_account_name
@@ -275,6 +310,11 @@ output "automation_credentials_username" {
 }
 
 # --- azurerm_automation_dsc_configuration ---
+output "automation_dsc_configurations_id" {
+  description = "Map of id values across all automation_dsc_configurations, keyed the same as var.automation_dsc_configurations"
+  value       = module.automation_dsc_configurations.automation_dsc_configurations_id
+}
+
 output "automation_dsc_configurations_automation_account_name" {
   description = "Map of automation_account_name values across all automation_dsc_configurations, keyed the same as var.automation_dsc_configurations"
   value       = module.automation_dsc_configurations.automation_dsc_configurations_automation_account_name
@@ -321,6 +361,11 @@ output "automation_dsc_configurations_tags" {
 }
 
 # --- azurerm_automation_dsc_nodeconfiguration ---
+output "automation_dsc_nodeconfigurations_id" {
+  description = "Map of id values across all automation_dsc_nodeconfigurations, keyed the same as var.automation_dsc_nodeconfigurations"
+  value       = module.automation_dsc_nodeconfigurations.automation_dsc_nodeconfigurations_id
+}
+
 output "automation_dsc_nodeconfigurations_automation_account_name" {
   description = "Map of automation_account_name values across all automation_dsc_nodeconfigurations, keyed the same as var.automation_dsc_nodeconfigurations"
   value       = module.automation_dsc_nodeconfigurations.automation_dsc_nodeconfigurations_automation_account_name
@@ -347,6 +392,11 @@ output "automation_dsc_nodeconfigurations_resource_group_name" {
 }
 
 # --- azurerm_automation_hybrid_runbook_worker ---
+output "automation_hybrid_runbook_workers_id" {
+  description = "Map of id values across all automation_hybrid_runbook_workers, keyed the same as var.automation_hybrid_runbook_workers"
+  value       = module.automation_hybrid_runbook_workers.automation_hybrid_runbook_workers_id
+}
+
 output "automation_hybrid_runbook_workers_automation_account_name" {
   description = "Map of automation_account_name values across all automation_hybrid_runbook_workers, keyed the same as var.automation_hybrid_runbook_workers"
   value       = module.automation_hybrid_runbook_workers.automation_hybrid_runbook_workers_automation_account_name
@@ -398,6 +448,11 @@ output "automation_hybrid_runbook_workers_worker_type" {
 }
 
 # --- azurerm_automation_hybrid_runbook_worker_group ---
+output "automation_hybrid_runbook_worker_groups_id" {
+  description = "Map of id values across all automation_hybrid_runbook_worker_groups, keyed the same as var.automation_hybrid_runbook_worker_groups"
+  value       = module.automation_hybrid_runbook_worker_groups.automation_hybrid_runbook_worker_groups_id
+}
+
 output "automation_hybrid_runbook_worker_groups_automation_account_name" {
   description = "Map of automation_account_name values across all automation_hybrid_runbook_worker_groups, keyed the same as var.automation_hybrid_runbook_worker_groups"
   value       = module.automation_hybrid_runbook_worker_groups.automation_hybrid_runbook_worker_groups_automation_account_name
@@ -419,6 +474,11 @@ output "automation_hybrid_runbook_worker_groups_resource_group_name" {
 }
 
 # --- azurerm_automation_module ---
+output "automation_modules_id" {
+  description = "Map of id values across all automation_modules, keyed the same as var.automation_modules"
+  value       = module.automation_modules.automation_modules_id
+}
+
 output "automation_modules_automation_account_name" {
   description = "Map of automation_account_name values across all automation_modules, keyed the same as var.automation_modules"
   value       = module.automation_modules.automation_modules_automation_account_name
@@ -440,6 +500,11 @@ output "automation_modules_resource_group_name" {
 }
 
 # --- azurerm_automation_powershell72_module ---
+output "automation_powershell72_modules_id" {
+  description = "Map of id values across all automation_powershell72_modules, keyed the same as var.automation_powershell72_modules"
+  value       = module.automation_powershell72_modules.automation_powershell72_modules_id
+}
+
 output "automation_powershell72_modules_automation_account_id" {
   description = "Map of automation_account_id values across all automation_powershell72_modules, keyed the same as var.automation_powershell72_modules"
   value       = module.automation_powershell72_modules.automation_powershell72_modules_automation_account_id
@@ -461,6 +526,11 @@ output "automation_powershell72_modules_tags" {
 }
 
 # --- azurerm_automation_python3_package ---
+output "automation_python3_packages_id" {
+  description = "Map of id values across all automation_python3_packages, keyed the same as var.automation_python3_packages"
+  value       = module.automation_python3_packages.automation_python3_packages_id
+}
+
 output "automation_python3_packages_automation_account_name" {
   description = "Map of automation_account_name values across all automation_python3_packages, keyed the same as var.automation_python3_packages"
   value       = module.automation_python3_packages.automation_python3_packages_automation_account_name
@@ -502,6 +572,11 @@ output "automation_python3_packages_tags" {
 }
 
 # --- azurerm_automation_runbook ---
+output "automation_runbooks_id" {
+  description = "Map of id values across all automation_runbooks, keyed the same as var.automation_runbooks"
+  value       = module.automation_runbooks.automation_runbooks_id
+}
+
 output "automation_runbooks_automation_account_name" {
   description = "Map of automation_account_name values across all automation_runbooks, keyed the same as var.automation_runbooks"
   value       = module.automation_runbooks.automation_runbooks_automation_account_name
@@ -578,6 +653,11 @@ output "automation_runbooks_tags" {
 }
 
 # --- azurerm_automation_runtime_environment ---
+output "automation_runtime_environments_id" {
+  description = "Map of id values across all automation_runtime_environments, keyed the same as var.automation_runtime_environments"
+  value       = module.automation_runtime_environments.automation_runtime_environments_id
+}
+
 output "automation_runtime_environments_automation_account_id" {
   description = "Map of automation_account_id values across all automation_runtime_environments, keyed the same as var.automation_runtime_environments"
   value       = module.automation_runtime_environments.automation_runtime_environments_automation_account_id
@@ -619,6 +699,11 @@ output "automation_runtime_environments_tags" {
 }
 
 # --- azurerm_automation_schedule ---
+output "automation_schedules_id" {
+  description = "Map of id values across all automation_schedules, keyed the same as var.automation_schedules"
+  value       = module.automation_schedules.automation_schedules_id
+}
+
 output "automation_schedules_automation_account_name" {
   description = "Map of automation_account_name values across all automation_schedules, keyed the same as var.automation_schedules"
   value       = module.automation_schedules.automation_schedules_automation_account_name
@@ -680,6 +765,11 @@ output "automation_schedules_week_days" {
 }
 
 # --- azurerm_automation_software_update_configuration ---
+output "automation_software_update_configurations_id" {
+  description = "Map of id values across all automation_software_update_configurations, keyed the same as var.automation_software_update_configurations"
+  value       = module.automation_software_update_configurations.automation_software_update_configurations_id
+}
+
 output "automation_software_update_configurations_automation_account_id" {
   description = "Map of automation_account_id values across all automation_software_update_configurations, keyed the same as var.automation_software_update_configurations"
   value       = module.automation_software_update_configurations.automation_software_update_configurations_automation_account_id
@@ -746,6 +836,11 @@ output "automation_software_update_configurations_windows" {
 }
 
 # --- azurerm_automation_source_control ---
+output "automation_source_controls_id" {
+  description = "Map of id values across all automation_source_controls, keyed the same as var.automation_source_controls"
+  value       = module.automation_source_controls.automation_source_controls_id
+}
+
 output "automation_source_controls_automatic_sync" {
   description = "Map of automatic_sync values across all automation_source_controls, keyed the same as var.automation_source_controls"
   value       = module.automation_source_controls.automation_source_controls_automatic_sync
@@ -797,6 +892,11 @@ output "automation_source_controls_source_control_type" {
 }
 
 # --- azurerm_automation_variable_bool ---
+output "automation_variable_bools_id" {
+  description = "Map of id values across all automation_variable_bools, keyed the same as var.automation_variable_bools"
+  value       = module.automation_variable_bools.automation_variable_bools_id
+}
+
 output "automation_variable_bools_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_bools, keyed the same as var.automation_variable_bools"
   value       = module.automation_variable_bools.automation_variable_bools_automation_account_name
@@ -828,6 +928,11 @@ output "automation_variable_bools_value" {
 }
 
 # --- azurerm_automation_variable_datetime ---
+output "automation_variable_datetimes_id" {
+  description = "Map of id values across all automation_variable_datetimes, keyed the same as var.automation_variable_datetimes"
+  value       = module.automation_variable_datetimes.automation_variable_datetimes_id
+}
+
 output "automation_variable_datetimes_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_datetimes, keyed the same as var.automation_variable_datetimes"
   value       = module.automation_variable_datetimes.automation_variable_datetimes_automation_account_name
@@ -859,6 +964,11 @@ output "automation_variable_datetimes_value" {
 }
 
 # --- azurerm_automation_variable_int ---
+output "automation_variable_ints_id" {
+  description = "Map of id values across all automation_variable_ints, keyed the same as var.automation_variable_ints"
+  value       = module.automation_variable_ints.automation_variable_ints_id
+}
+
 output "automation_variable_ints_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_ints, keyed the same as var.automation_variable_ints"
   value       = module.automation_variable_ints.automation_variable_ints_automation_account_name
@@ -890,6 +1000,11 @@ output "automation_variable_ints_value" {
 }
 
 # --- azurerm_automation_variable_object ---
+output "automation_variable_objects_id" {
+  description = "Map of id values across all automation_variable_objects, keyed the same as var.automation_variable_objects"
+  value       = module.automation_variable_objects.automation_variable_objects_id
+}
+
 output "automation_variable_objects_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_objects, keyed the same as var.automation_variable_objects"
   value       = module.automation_variable_objects.automation_variable_objects_automation_account_name
@@ -921,6 +1036,11 @@ output "automation_variable_objects_value" {
 }
 
 # --- azurerm_automation_variable_string ---
+output "automation_variable_strings_id" {
+  description = "Map of id values across all automation_variable_strings, keyed the same as var.automation_variable_strings"
+  value       = module.automation_variable_strings.automation_variable_strings_id
+}
+
 output "automation_variable_strings_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_strings, keyed the same as var.automation_variable_strings"
   value       = module.automation_variable_strings.automation_variable_strings_automation_account_name
@@ -952,6 +1072,11 @@ output "automation_variable_strings_value" {
 }
 
 # --- azurerm_automation_watcher ---
+output "automation_watchers_id" {
+  description = "Map of id values across all automation_watchers, keyed the same as var.automation_watchers"
+  value       = module.automation_watchers.automation_watchers_id
+}
+
 output "automation_watchers_automation_account_id" {
   description = "Map of automation_account_id values across all automation_watchers, keyed the same as var.automation_watchers"
   value       = module.automation_watchers.automation_watchers_automation_account_id
@@ -1008,6 +1133,11 @@ output "automation_watchers_tags" {
 }
 
 # --- azurerm_automation_webhook ---
+output "automation_webhooks_id" {
+  description = "Map of id values across all automation_webhooks, keyed the same as var.automation_webhooks"
+  value       = module.automation_webhooks.automation_webhooks_id
+}
+
 output "automation_webhooks_automation_account_name" {
   description = "Map of automation_account_name values across all automation_webhooks, keyed the same as var.automation_webhooks"
   value       = module.automation_webhooks.automation_webhooks_automation_account_name
@@ -1055,6 +1185,11 @@ output "automation_webhooks_uri" {
 }
 
 # --- azurerm_automation_connection_certificate ---
+output "automation_connection_certificates_id" {
+  description = "Map of id values across all automation_connection_certificates, keyed the same as var.automation_connection_certificates"
+  value       = module.automation_connection_certificates.automation_connection_certificates_id
+}
+
 output "automation_connection_certificates_automation_account_name" {
   description = "Map of automation_account_name values across all automation_connection_certificates, keyed the same as var.automation_connection_certificates"
   value       = module.automation_connection_certificates.automation_connection_certificates_automation_account_name
@@ -1086,6 +1221,11 @@ output "automation_connection_certificates_subscription_id" {
 }
 
 # --- azurerm_automation_job_schedule ---
+output "automation_job_schedules_id" {
+  description = "Map of id values across all automation_job_schedules, keyed the same as var.automation_job_schedules"
+  value       = module.automation_job_schedules.automation_job_schedules_id
+}
+
 output "automation_job_schedules_automation_account_name" {
   description = "Map of automation_account_name values across all automation_job_schedules, keyed the same as var.automation_job_schedules"
   value       = module.automation_job_schedules.automation_job_schedules_automation_account_name
@@ -1127,6 +1267,11 @@ output "automation_job_schedules_schedule_name" {
 }
 
 # --- azurerm_automation_runtime_environment_package ---
+output "automation_runtime_environment_packages_id" {
+  description = "Map of id values across all automation_runtime_environment_packages, keyed the same as var.automation_runtime_environment_packages"
+  value       = module.automation_runtime_environment_packages.automation_runtime_environment_packages_id
+}
+
 output "automation_runtime_environment_packages_automation_runtime_environment_id" {
   description = "Map of automation_runtime_environment_id values across all automation_runtime_environment_packages, keyed the same as var.automation_runtime_environment_packages"
   value       = module.automation_runtime_environment_packages.automation_runtime_environment_packages_automation_runtime_environment_id
