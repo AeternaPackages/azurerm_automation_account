@@ -275,8 +275,8 @@ EOT
     name                          = string
     resource_group_name           = string
     sku_name                      = string
-    local_authentication_enabled  = optional(bool) # Default: true
-    public_network_access_enabled = optional(bool) # Default: true
+    local_authentication_enabled  = optional(bool)
+    public_network_access_enabled = optional(bool)
     tags                          = optional(map(string))
     encryption = optional(list(object({
       key_source                = optional(string)
@@ -294,7 +294,7 @@ EOT
       name                         = string
       resource_group_name          = string
       description                  = optional(string)
-      exportable                   = optional(bool) # Default: false
+      exportable                   = optional(bool)
       automation_connection_certificates = optional(map(object({
         name                = string
         resource_group_name = string
@@ -352,7 +352,7 @@ EOT
       name                = string
       resource_group_name = string
       description         = optional(string)
-      log_verbose         = optional(bool) # Default: false
+      log_verbose         = optional(bool)
       tags                = optional(map(string))
     })))
     automation_dsc_nodeconfigurations = optional(map(object({
@@ -428,15 +428,16 @@ EOT
         parameters = optional(list(object({
           default_value = optional(string)
           key           = string
-          mandatory     = optional(bool) # Default: false
+          mandatory     = optional(bool)
           position      = optional(number)
           type          = string
         })))
       }))
       job_schedule = optional(list(object({
-        parameters    = optional(map(string))
-        run_on        = optional(string)
-        schedule_name = string
+        job_schedule_id = optional(string)
+        parameters      = optional(map(string))
+        run_on          = optional(string)
+        schedule_name   = optional(string)
       })))
       publish_content_link = optional(object({
         hash = optional(object({
@@ -472,7 +473,7 @@ EOT
       interval            = optional(number)
       month_days          = optional(set(number))
       start_time          = optional(string)
-      timezone            = optional(string) # Default: "Etc/UTC"
+      timezone            = optional(string)
       week_days           = optional(set(string))
       monthly_occurrence = optional(object({
         day        = string
@@ -488,7 +489,7 @@ EOT
     })))
     automation_software_update_configurations = optional(map(object({
       name                     = string
-      duration                 = optional(string) # Default: "PT2H"
+      duration                 = optional(string)
       non_azure_computer_names = optional(list(string))
       virtual_machine_ids      = optional(list(string))
       schedule = object({
@@ -499,7 +500,7 @@ EOT
         expiry_time_offset_minutes = optional(number)
         frequency                  = string
         interval                   = optional(number)
-        is_enabled                 = optional(bool) # Default: true
+        is_enabled                 = optional(bool)
         monthly_occurrence = optional(object({
           day        = string
           occurrence = number
@@ -508,13 +509,13 @@ EOT
         next_run_offset_minutes   = optional(number)
         start_time                = optional(string)
         start_time_offset_minutes = optional(number)
-        time_zone                 = optional(string) # Default: "Etc/UTC"
+        time_zone                 = optional(string)
       })
       linux = optional(object({
         classifications_included = list(string)
         excluded_packages        = optional(list(string))
         included_packages        = optional(list(string))
-        reboot                   = optional(string) # Default: "IfRequired"
+        reboot                   = optional(string)
       }))
       post_task = optional(object({
         parameters = optional(map(string))
@@ -543,7 +544,7 @@ EOT
         classifications_included        = list(string)
         excluded_knowledge_base_numbers = optional(list(string))
         included_knowledge_base_numbers = optional(list(string))
-        reboot                          = optional(string) # Default: "IfRequired"
+        reboot                          = optional(string)
       }))
     })))
     automation_source_controls = optional(map(object({
@@ -551,10 +552,10 @@ EOT
       name                    = string
       repository_url          = string
       source_control_type     = string
-      automatic_sync          = optional(bool) # Default: false
+      automatic_sync          = optional(bool)
       branch                  = optional(string)
       description             = optional(string)
-      publish_runbook_enabled = optional(bool) # Default: true
+      publish_runbook_enabled = optional(bool)
       security = object({
         refresh_token = optional(string)
         token         = string
@@ -565,35 +566,35 @@ EOT
       name                = string
       resource_group_name = string
       description         = optional(string)
-      encrypted           = optional(bool) # Default: false
+      encrypted           = optional(bool)
       value               = optional(bool)
     })))
     automation_variable_datetimes = optional(map(object({
       name                = string
       resource_group_name = string
       description         = optional(string)
-      encrypted           = optional(bool) # Default: false
+      encrypted           = optional(bool)
       value               = optional(string)
     })))
     automation_variable_ints = optional(map(object({
       name                = string
       resource_group_name = string
       description         = optional(string)
-      encrypted           = optional(bool) # Default: false
+      encrypted           = optional(bool)
       value               = optional(number)
     })))
     automation_variable_objects = optional(map(object({
       name                = string
       resource_group_name = string
       description         = optional(string)
-      encrypted           = optional(bool) # Default: false
+      encrypted           = optional(bool)
       value               = optional(string)
     })))
     automation_variable_strings = optional(map(object({
       name                = string
       resource_group_name = string
       description         = optional(string)
-      encrypted           = optional(bool) # Default: false
+      encrypted           = optional(bool)
       value               = optional(string)
     })))
     automation_watchers = optional(map(object({
@@ -612,7 +613,7 @@ EOT
       name                      = string
       resource_group_name       = string
       runbook_name              = string
-      enabled                   = optional(bool) # Default: true
+      enabled                   = optional(bool)
       parameters                = optional(map(string))
       run_on_worker_group       = optional(string)
       uri                       = optional(string)
